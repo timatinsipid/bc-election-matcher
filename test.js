@@ -25,7 +25,7 @@ let r = computeResults(abcUser, {}, PARTIES, QUESTIONS);
 assert.strictEqual(r[0].party.id, "ndp");
 
 // Same for the other scored parties
-for (const pid of ["con", "green", "onebc"]) {
+for (const pid of ["con", "green", "onebc", "centre"]) {
   const a = answersFor((q) => (q.stances[pid] ? q.stances[pid][0] : null));
   const res = computeResults(a, {}, PARTIES, QUESTIONS);
   assert.strictEqual(res[0].party.id, pid, "expected " + pid + " got " + res[0].party.id);

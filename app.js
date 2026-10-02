@@ -122,7 +122,7 @@
       h("p", { class: "muted", text: "Your closest match" }),
       h("h2", { text: top.party.name }),
       h("div", { class: "pct", text: pct(top.score) }),
-      h("p", { class: "muted", text: "Led by " + top.party.leader + ". Based on " + top.n + " of your " + answered + " answered questions where this party has a documented position." }),
+      h("p", { class: "muted", text: (/^Council slate/.test(top.party.leader) ? top.party.leader : "Led by " + top.party.leader) + ". Based on " + top.n + " of your " + answered + " answered questions where this party has a documented position." }),
       h("p", { text: top.party.blurb })
     ]);
     app.appendChild(winner);

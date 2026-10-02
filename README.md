@@ -1,6 +1,6 @@
 # BC 2026 Provincial Election Matcher
 
-A static, no-backend quiz that asks 18 questions on provincial issues and ranks the four BC parties with documented positions (NDP, Conservatives, Greens, OneBC; CentreBC is listed but not scored because it has published no platform) by how closely their published platforms match your answers, citing the platform item and source behind each reason. Plain HTML/CSS/JS, so it deploys to Azure Static Web Apps (free tier is fine) with no build step.
+A static, no-backend quiz that asks 25 questions on provincial issues and ranks the five BC parties (NDP, Conservatives, Greens, OneBC, CentreBC) by how closely their published platforms match your answers, citing the platform item and source behind each reason. Plain HTML/CSS/JS, so it deploys to Azure Static Web Apps (free tier is fine) with no build step.
 
 ## Files
 
@@ -36,4 +36,4 @@ Push this folder to a GitHub repo on `main`, create the Static Web App with `--s
 
 ## Updating positions
 
-Edit `QUESTIONS[].stances` in `data.js`. Format: `party: [stance, "note", "sourceKey", inferred?]`, where stance is -2 to +2 and `sourceKey` refers to `SOURCES`. Run `node test.js` afterwards. The election is October 17, 2026; OneCity and COPE had not released full platforms when this was researched, and Bright Future's detailed platform was still pending.
+Edit `QUESTIONS[].stances` in `data.js`. Format: `party: [stance, "note", "sourceKey", inferred?]`, where stance is -2 to +2 and `sourceKey` refers to `SOURCES`. Run `node test.js` afterwards. The snap election is October 24, 2026. Platforms were still being released when this was researched (Oct 2, week 3 of the campaign), so re-check and update `data.js` as parties publish more. Most commitments were cross-checked against the BC Ballot tracker and news coverage.
