@@ -4,7 +4,7 @@
  * A party is only scored on a question when a published platform item,
  * campaign statement or government record addresses it. `inferred: true`
  * marks stances that are a reasonable reading of a related item rather than
- * a direct statement. Research snapshot: 2 Oct 2026 (week 2-3 of the campaign).
+ * a direct statement. Research snapshot: 6 Oct 2026 (week 3 of the campaign).
  * Election day: 24 Oct 2026 (advance voting 16-21 Oct).
  */
 
@@ -29,16 +29,19 @@ const SOURCES = {
   greensPlan: { label: "BC Greens – Emily Lowan announces election plans", url: "https://bcgreens.ca/emily-lowan-announces-election-plans/" },
   day4: { label: "Western Standard – Day 4 of the BC election (as reported by that outlet)", url: "https://www.westernstandard.news/bc/bc-election-day-4-ebys-wildfire-rhetoric-backfires-as-conservatives-surge/77317" },
   budget: { label: "CBC – 2026 B.C. budget (tax increases, job cuts, deficit)", url: "https://www.cbc.ca/news/canada/british-columbia/b-c-budget-2026-9.7094451" },
+  yahooTax: { label: "Yahoo News/CP – Eby defends plan to tax the rich; party health plans", url: "https://ca.news.yahoo.com/eby-defends-plan-tax-rich-195417224.html" },
+  bcNdpCon: { label: "BC Ballot – NDP vs Conservative commitments (Oct 1+)", url: "https://bcballot.ca/platforms/bc-ndp-vs-conservative/" },
+  day9: { label: "Western Standard – Day 9 of the BC election (as reported by that outlet)", url: "https://www.westernstandard.news/bc/day-9-of-the-2026-bc-election-national-day-of-truth-and-reconciliation/77440" },
   oneBC: { label: "Wikipedia – OneBC", url: "https://en.wikipedia.org/wiki/OneBC_(political_party)" }
 };
 
 const PARTIES = [
   { id: "ndp", name: "BC NDP", leader: "David Eby (Premier)", color: "#e8590c",
-    blurb: "Governing party running on \"Build BC Strong\": resource and critical-minerals development, a 10-cent fuel tax cut with a gas \"price guard\", higher speculation taxes and a public health system." },
+    blurb: "Governing party running on \"Build BC Strong\": resource and critical-minerals development, a 10-cent fuel tax cut with a gas \"price guard\", grocery margin caps, a new tax bracket on income above $1 million and higher speculation taxes." },
   { id: "con", name: "Conservative Party of BC", leader: "Lorne Doerkson (interim leader)", color: "#1c7ed6",
     blurb: "Official Opposition running on \"no new taxes\", a 120-day permitting act, doubling LNG production by 2032 and tripling it by 2035, and repealing SOGI and DRIPA. Leadership is interim after Kerry-Lynne Findlay resigned on September 20." },
   { id: "green", name: "BC Greens", leader: "Emily Lowan", color: "#2f9e44",
-    blurb: "Running on \"Believe in Better\": vacancy control and renter protections, universal free childcare by 2031, taxing mega-corporations and the ultra-wealthy, and ending new fossil fuel development." },
+    blurb: "Running on \"Believe in Better\": vacancy control and renter protections, universal free childcare by 2031, a wealth tax on fortunes above $50 million, free transit and ending new fossil fuel development." },
   { id: "onebc", name: "OneBC", leader: "Dallas Brodie (interim leader)", color: "#6741d9",
     blurb: "Right-wing populist, socially conservative party formed by former Conservative MLAs: 25% tax cuts across all brackets, private health care alongside public, rolling back decriminalization and repealing DRIPA." },
   { id: "centre", name: "CentreBC", leader: "Elenore Sturko", color: "#0ca678",
@@ -54,7 +57,7 @@ const QUESTIONS = [
     stances: {
       con: [2, "Would double LNG production by 2032 and triple it by 2035 with very fast project approvals.", "cpLng"],
       ndp: [2, "Supports LNG Canada phase two as one of the largest private-sector investments in Canadian history and approved Tilbury LNG Phase 2.", "buzz"],
-      green: [-2, "Would redirect LNG subsidies to renewable energy and oppose the LNG Canada phase-two expansion.", "bcPlat"]
+      green: [-2, "Would redirect LNG subsidies to renewable energy and opposes the LNG Canada phase-two expansion, backing Indigenous nations that oppose it.", "day9"]
     } },
   { id: "pipeline", topic: "Energy & climate",
     text: "BC should support a new oil pipeline to the northwest coast (Prince Rupert or Kitimat).",
@@ -89,7 +92,7 @@ const QUESTIONS = [
     stances: {
       con: [2, "Pledges no new taxes throughout a Conservative government.", "cpTax"],
       onebc: [2, "Promises 25% tax cuts for every bracket, including corporate.", "bcOne"],
-      ndp: [-1, "Proposes higher speculation taxes and a new unsold-condo tax, and the 2026 budget raised the lowest income tax rate.", "bcPlat"],
+      ndp: [-2, "Would raise the top two income tax brackets by 2 points, add a new bracket above $1 million and add an unsold-condo tax, though it would also cut the fuel tax by 10 cents.", "bcNdpCon"],
       green: [-2, "Wants a windfall tax on mega-corporations and the ultra-wealthy to pay their \"fair share\".", "bcPlat"]
     } },
   { id: "pst", topic: "Taxes & budget",
@@ -107,9 +110,9 @@ const QUESTIONS = [
   { id: "wealthytax", topic: "Taxes & budget",
     text: "Large corporations and the wealthiest British Columbians should pay significantly more in tax.",
     stances: {
-      green: [2, "\"Economic Fairness for All\": a windfall tax on mega-corporations and higher royalty rates, with fossil fuel subsidies ended.", "bcPlat"],
-      ndp: [1, "Says those earning the most should pay their fair share to invest in health care.", "bcPlat"],
-      con: [-2, "Rules out any new taxes.", "cpTax", true],
+      green: [2, "Proposes a wealth tax on net assets over $50 million (the Fair Share Act) plus a windfall tax on mega-corporations.", "yahooTax"],
+      ndp: [2, "Would add a 24.5% bracket on income above $1 million from 2027 and raise the top two brackets by 2 points, raising about $1 billion a year for health care and cost relief.", "yahooTax"],
+      con: [-2, "Rules out any new taxes and calls the NDP's millionaire bracket a \"doctor's tax\".", "yahooTax"],
       onebc: [-1, "Favours big tax cuts rather than new taxes.", "bcOne", true]
     } },
   { id: "deficit", topic: "Taxes & budget",
@@ -143,7 +146,7 @@ const QUESTIONS = [
   { id: "nonmarket", topic: "Housing",
     text: "The province should fund non-profit, community and Indigenous housing and build tens of thousands of units a year.",
     stances: {
-      green: [2, "Would restart the Community Housing Fund and Indigenous Housing Fund and build and protect 26,000 homes a year.", "greensVac"],
+      green: [2, "Would restart $1.4 billion in housing funds, including the Community Housing Fund and Indigenous Housing Fund, and build 26,000 affordable homes a year.", "day9"],
       ndp: [1, "Would direct additional tax revenue toward building affordable housing.", "bcPlat"]
     } },
   { id: "healthrecruit", topic: "Health care",
@@ -162,12 +165,43 @@ const QUESTIONS = [
     text: "Safe supply, drug consumption sites and decriminalization should be eliminated or rolled back.",
     stances: {
       onebc: [2, "Would eliminate safe supply and consumption programs, convert existing sites to recovery centres and roll back decriminalization.", "bcOne"],
-      green: [-2, "Would fight the toxic drug crisis through harm reduction and voluntary care.", "bcPlat"]
+      green: [-2, "Would fight the toxic drug crisis through harm reduction, supervised sites, pharmaceutical alternatives and decriminalization.", "bcPlat"]
     } },
   { id: "extortion", topic: "Public safety",
     text: "BC should create dedicated tools against extortion of businesses, such as a specialized prosecution docket and a joint RCMP, CBSA and FINTRAC cell.",
     stances: {
       centre: [2, "Proposes a three-step extortion plan, a FINTRAC–RCMP–CBSA cell in Surrey, security micro-grants and a dedicated extortion docket.", "bcCentre"]
+    } },
+  { id: "wealthtax", topic: "Taxes & budget",
+    text: "BC should introduce an annual wealth tax on net assets above $50 million.",
+    stances: {
+      green: [2, "The Fair Share Act would impose annual wealth taxes of 2% above $50M, 3% above $100M and 5% above $1B, to fund childcare, transit and housing.", "yahooTax"],
+      con: [-2, "Rules out any new taxes.", "cpTax", true],
+      onebc: [-2, "Promises 25% tax cuts rather than new taxes.", "bcOne", true]
+    } },
+  { id: "freetransit", topic: "Transportation",
+    text: "Public transit should be free across BC.",
+    stances: {
+      green: [2, "Would use wealth tax revenue to fund free public transit.", "yahooTax"]
+    } },
+  { id: "grocery", topic: "Cost of living",
+    text: "The province should cap retail margins on essential groceries and require per-unit shelf pricing.",
+    stances: {
+      ndp: [2, "Would cap corporate retailers' margins on essentials, mandate per-unit pricing and ban restrictions that block grocery competition.", "bcNdpCon"]
+    } },
+  { id: "seniorscare", topic: "Health care",
+    text: "BC should expand seniors' care, including home care and long-term care staffing and beds.",
+    stances: {
+      ndp: [2, "Would add 500 health care workers for seniors and resume seven paused long-term care projects.", "yahooTax"],
+      green: [2, "Commits to long-term and dementia care and community health centres.", "bcPlat"],
+      centre: [2, "Would expand home care so seniors can age with dignity.", "bcCentre"]
+    } },
+  { id: "involuntary", topic: "Public safety",
+    text: "BC should expand involuntary care for people with severe addiction and mental illness.",
+    stances: {
+      onebc: [2, "Would provide involuntary drug rehabilitation and housing for severely addicted people.", "bcOne"],
+      ndp: [1, "Promised involuntary care at an immediately available site in the Kelowna region.", "bcNdpCon"],
+      green: [-2, "Would fight the toxic drug crisis through harm reduction and voluntary care.", "bcPlat"]
     } },
   { id: "sogi", topic: "Schools",
     text: "SOGI 123 teaching resources should be removed from BC schools.",
