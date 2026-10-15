@@ -42,10 +42,7 @@
       text: "The City should commit to firm, published timelines for permit and housing approvals.",
       stances: {
         petrovas: [2, "Promises published timelines and quarterly reporting on approval times by application type.", "multiliving"],
-        wang: [2, "Wants simpler approvals for mid-sized homes.", "multiliving"],
-        hurley: [1, "Promises shorter approval times for new homes.", "multiliving"],
-        first: [1, "Promises to simplify approvals and reduce delays.", "multiliving"],
-        newburnaby: [1, "Would speed permits for daycares, renovations and small businesses.", "newburnaby"]
+        wang: [1, "Wants simpler approvals for mid-sized homes, without firm published timelines.", "multiliving", true]
       } },
     { id: "housingauthority", topic: "Housing",
       text: "The City should build affordable rental homes directly through its own housing authority.",

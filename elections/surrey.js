@@ -1,5 +1,6 @@
 (function () {
   const SOURCES = {
+    ubyssey: { label: "The Ubyssey – Surrey's race for mayor", url: "https://ubyssey.ca/news/municipal-elections-surrey-mayor-race/" },
     runner: { label: "The Runner – Surrey votes: a breakdown of the 2026 party platforms", url: "https://runnermag.ca/2026/10/surrey-votes-a-breakdown-of-the-2026-municipal-party-platforms/" },
     wiki: { label: "Wikipedia – 2026 Surrey municipal election (carries a conflict-of-interest notice)", url: "https://en.wikipedia.org/wiki/2026_Surrey_municipal_election" }
   };
@@ -32,14 +33,14 @@
       stances: {
         first: [2, "Promises to complete the policing transition.", "runner"],
         connect: [1, "Criticized the transition but agreed in 2024 to continue with the Surrey Police Service.", "runner"],
-        ssc: [2, "Promises to complete the Surrey Police Service transition and give it a helicopter and drone fleet within 90 days.", "runner"]
+        ssc: [2, "Promises to complete the Surrey Police Service transition and give it a helicopter and drone fleet within 90 days.", "ubyssey"]
       } },
     { id: "policingfund", topic: "Public safety",
       text: "Surrey should fully fund policing and add more public safety staff.",
       stances: {
         cea: [2, "Promises to fully fund policing.", "wiki"],
         connect: [1, "Plans more public-safety staff.", "wiki"],
-        first: [1, "Would focus council on gangs and extortion.", "wiki", true]
+        first: [2, "Linda Annis pledges to hire 300 more police officers.", "ubyssey"]
       } },
     { id: "extortion", topic: "Public safety",
       text: "Surrey should treat extortion as a top priority, with regular public reporting.",
@@ -102,7 +103,7 @@
       text: "Surrey should offer city-owned land at 6965 King George Boulevard for a new hospital.",
       stances: {
         ssc: [2, "Proposes a hospital on city-owned land at 6965 King George Boulevard.", "runner"],
-        cea: [2, "Proposes a senior and children's hospital at 6965 King George Boulevard within 100 days.", "runner"]
+        cea: [2, "Proposes a senior and children's hospital at 6965 King George Boulevard, dedicating the city land within 100 days.", "runner"]
       } },
     { id: "permits", topic: "Housing",
       text: "Surrey should commit to issuing all city permits within 60 days.",
@@ -113,7 +114,7 @@
 
   const UNSCORED = [
     { name: "New Surrey+ (Igal Ammons II)", leader: "",
-      note: "Proposes a single-fare transit network from West Vancouver to Abbotsford Airport, a clinic in each of six neighbourhoods and evenly split investment across six town centres. Its platform covers only one or two of the issues in this quiz (transit and health clinics), so there is too little to compare and it is not scored.", source: "runner" }
+      note: "Proposes a single-fare transit network from West Vancouver to Abbotsford Airport, a clinic in each of six neighbourhoods and evenly split investment across six town centres. Its single-fare transit network maps to only one quiz question (transit fares); every scored slate has at least two stances, so it is not scored.", source: "runner" }
   ];
 
   ELECTIONS.push({
@@ -121,7 +122,7 @@
     date: "2026-10-17", dateLabel: "October 17, 2026", advance: "Advance voting dates: see the City of Surrey",
     updated: "2026-10-15",
     intro: "Agree or disagree with short statements about Surrey issues. At the end you'll see which slate's published platform lines up best with your views, with reasons and sources.",
-    caveat: "Surrey has seven mayoral slates; six are scored and New Surrey+ is not, because its platform overlaps with too few of the quiz questions. Independents are not included. Several platforms (Conservative, Surrey Now) are thin, and most are summarized from one press breakdown, so verify before you vote.",
+    caveat: "Surrey has seven mayoral slates; six are scored and New Surrey+ is not, because its platform maps to only one quiz question, and a slate needs at least two to be scored. Independents are not included. Several platforms (Conservative, Surrey Now) are thin, and most are summarized from one press breakdown, so verify before you vote.",
     sources: SOURCES, parties: PARTIES, unscored: UNSCORED, questions: QUESTIONS
   });
 })();

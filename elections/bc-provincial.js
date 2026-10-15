@@ -19,6 +19,8 @@ const SOURCES = {
   bcCentre: { label: "BC Ballot – CentreBC platform", url: "https://bcballot.ca/platforms/centrebc/" },
   bcOne: { label: "BC Ballot – OneBC platform", url: "https://bcballot.ca/platforms/onebc/" },
   bcCon: { label: "BC Ballot – Conservative platform", url: "https://bcballot.ca/platforms/conservative-party/" },
+  natobs: { label: "National Observer – Eby pledges relief at the gas pumps while Conservative Doerkson praises pipeline", url: "https://www.nationalobserver.com/2026/10/02/news/bcs-eby-pledges-relief-gas-pumps-while-conservative-doerkson-praises-pipeline" },
+  greensPdf: { label: "BC Greens – full costed platform (PDF, released Oct 13)", url: "https://bcgreens.ca/wp-content/uploads/2026/10/BCG_Platform.pdf" },
   fuel: { label: "Northeast News – Eby's gas relief plan", url: "https://northeastnow.com/2026/10/01/b-c-s-large-parties-on-track-to-field-candidates-in-all-ridings-as-deadline-looms/" },
   cpTax: { label: "Global News – Conservatives promise no new taxes", url: "https://globalnews.ca/news/12075070/bc-election-september-27-conservative-platform/" },
   cpLng: { label: "Today in BC – Conservatives pledge to triple LNG", url: "https://todayinbc.com/2026/09/28/b-c-conservative-leader-pledges-to-triple-lng-production/" },
@@ -43,7 +45,7 @@ const PARTIES = [
   { id: "con", name: "Conservative Party of BC", leader: "Lorne Doerkson (interim leader)", color: "#1c7ed6",
     blurb: "Official Opposition running on \"no new taxes\", a 120-day permitting act, doubling LNG production by 2032 and tripling it by 2035, and repealing SOGI and DRIPA. Leadership is interim after Kerry-Lynne Findlay resigned on September 20." },
   { id: "green", name: "BC Greens", leader: "Emily Lowan", color: "#2f9e44",
-    blurb: "Running on \"Believe in Better\": vacancy control and renter protections, universal free childcare by 2031, a one-time and annual wealth tax on fortunes above $50 million, free transit and ending new fossil fuel development." },
+    blurb: "Running on \"Believe in Better\": vacancy control and renter protections, universal free childcare by 2031, a one-time and annual wealth tax on fortunes above $50 million, phased-in free transit, proportional representation and ending approvals for new LNG, fracking and pipelines." },
   { id: "onebc", name: "OneBC", leader: "Dallas Brodie (interim leader)", color: "#6741d9",
     blurb: "Right-wing populist, socially conservative party formed by former Conservative MLAs: 25% tax cuts across all brackets, private health care alongside public, rolling back decriminalization and repealing DRIPA." },
   { id: "centre", name: "CentreBC", leader: "Elenore Sturko", color: "#0ca678",
@@ -59,14 +61,14 @@ const QUESTIONS = [
     stances: {
       con: [2, "Would double LNG production by 2032 and triple it by 2035 with very fast project approvals.", "cpLng"],
       ndp: [2, "Supports LNG Canada phase two as one of the largest private-sector investments in Canadian history.", "buzz"],
-      green: [-2, "Would redirect LNG subsidies to renewable energy and opposes the LNG Canada phase-two expansion, backing Indigenous nations that oppose it.", "day9"]
+      green: [-2, "Would end approvals for new LNG terminals and expansions, new fracking expansion and new fossil-fuel pipelines, and end subsidies that encourage fossil fuel expansion.", "greensPdf"]
     } },
   { id: "pipeline", topic: "Energy & climate",
     text: "BC should support a new oil pipeline to the northwest coast (Prince Rupert or Kitimat).",
     stances: {
-      con: [2, "Doerkson praised the federal designation of the Pacific Link pipeline as a national priority and wants a trilateral working group with Alberta and Ottawa (cited article does not contain this; source to be re-checked).", "fuel", true],
+      con: [2, "Doerkson praised the federal designation of the Pacific Link pipeline as a national priority.", "natobs"],
       onebc: [2, "Would approve a pipeline to Prince Rupert or Kitimat.", "bcOne"],
-      green: [-2, "Would stop new fossil fuel development.", "bcPlat"]
+      green: [-2, "Would end approvals for new fossil-fuel pipelines in British Columbia.", "greensPdf"]
     } },
   { id: "permits", topic: "Economy",
     text: "Major resource and infrastructure projects should be approved much faster, even if that means loosening some regulatory processes.",
@@ -74,15 +76,11 @@ const QUESTIONS = [
       con: [2, "Promises a 120-day permitting law for major projects over $250M, a red-tape minister and a one-in, two-out rule.", "bcCon"],
       ndp: [2, "Promises concurrent environmental assessments and faster permitting to double critical mineral exports in five years.", "buzz"],
       onebc: [2, "Would audit the province's 176,000+ regulations and speed forestry permits and consultations.", "bcOne"],
-      centre: [1, "Would speed approvals for manufacturers and set transparent project timelines with clear criteria.", "bcCentre"],
-      green: [-1, "Prioritizes renewables over new fossil fuel projects and opposes the LNG expansion.", "bcPlat", true]
-    } },
+      centre: [1, "Would speed approvals for manufacturers and set transparent project timelines with clear criteria.", "bcCentre"]    } },
   { id: "forestry", topic: "Economy",
     text: "BC should raise the allowable timber cut and cut stumpage fees to boost the forestry industry.",
     stances: {
-      onebc: [2, "Would increase the allowable annual cut and reduce stumpage fees.", "bcOne"],
-      green: [-1, "Would institute selective logging and value-added industries and fully fund old-growth deferrals.", "bcPlat", true]
-    } },
+      onebc: [2, "Would increase the allowable annual cut and reduce stumpage fees.", "bcOne"]    } },
   { id: "trades", topic: "Economy",
     text: "BC should invest more in skilled trades training.",
     stances: {
@@ -95,7 +93,7 @@ const QUESTIONS = [
       con: [2, "Pledges no new taxes, and would cut provincial income taxes by $1,000 a year for most workers.", "bcCon"],
       onebc: [2, "Promises 25% tax cuts for every bracket, including corporate.", "bcOne"],
       ndp: [-2, "Would raise the top two income tax brackets by 2 points, add a new bracket above $1 million and add an unsold-condo tax, though it would also cut the fuel tax by 10 cents.", "bcNdpCon"],
-      green: [-2, "Wants a windfall tax on mega-corporations and the ultra-wealthy to pay their \"fair share\".", "bcPlat"]
+      green: [-2, "Would introduce the Fair Share Act wealth tax and a windfall tax on mega-corporations, while promising that no one who works for an income pays more income tax than now.", "greensPdf"]
     } },
   { id: "pst", topic: "Taxes & budget",
     text: "The provincial sales tax (PST) should be cut or removed on more goods.",
@@ -107,12 +105,12 @@ const QUESTIONS = [
   { id: "fuel", topic: "Taxes & budget",
     text: "BC should temporarily cut the provincial fuel tax and cap gas station margins through a \"price guard\".",
     stances: {
-      ndp: [2, "Pledges a temporary 10-cent-per-litre fuel tax cut and a permanent BC Utilities Commission price guard.", "fuel"]
+      ndp: [2, "Pledges a temporary 10-cent-per-litre fuel tax cut and a permanent BC Utilities Commission price guard.", "natobs"]
     } },
   { id: "wealthytax", topic: "Taxes & budget",
     text: "Large corporations and the wealthiest British Columbians should pay significantly more in tax.",
     stances: {
-      green: [2, "Proposes a one-time and an annual wealth tax on net assets over $50 million (the Fair Share Act) plus a windfall tax on mega-corporations.", "yahooTax"],
+      green: [2, "Proposes a one-time and an annual wealth tax on net assets over $50 million (the Fair Share Act, costed at about $22.2 billion for the one-time levy and $5.4 billion a year for the annual tax) plus a windfall tax on mega-corporations and a tax on inheritances above $10 million.", "greensPdf"],
       ndp: [2, "Would add a 24.5% bracket on income above $1 million from 2027 and raise the top two brackets by 2 points, raising about $1 billion a year for health care and cost relief.", "yahooTax"],
       con: [-2, "Rules out any new taxes and calls the NDP's millionaire bracket a \"doctor's tax\".", "yahooTax"],
       onebc: [-1, "Favours big tax cuts rather than new taxes.", "bcOne", true]
@@ -140,27 +138,27 @@ const QUESTIONS = [
   { id: "emptyhomes", topic: "Housing",
     text: "The province should raise speculation and vacancy taxes and add a tax on unsold new condos.",
     stances: {
-      ndp: [2, "Would raise the speculation and vacancy tax and add a new tax on unsold new condos (reported as starting at 2% and rising 1% a year); the exact new speculation tax rates were not confirmed.", "bcPlat"],
+      ndp: [2, "Would raise the speculation tax from 1% to 2% (domestic) and 4% to 5% (foreign) and add an unsold-condo tax starting at 2% and rising 1% a year.", "bcPlat"],
       con: [-1, "Would keep the foreign buyers tax and the speculation and vacancy tax, but rules out any new taxes.", "bcCon"],
       onebc: [-1, "Favours broad tax cuts rather than new taxes.", "bcOne", true]
     } },
   { id: "nonmarket", topic: "Housing",
     text: "The province should fund non-profit, community and Indigenous housing and build tens of thousands of units a year.",
     stances: {
-      green: [2, "Would restart $1.4 billion in housing funds, including the Community Housing Fund and Indigenous Housing Fund, and build 26,000 affordable homes a year.", "day9"],
+      green: [2, "Would immediately restart the Community Housing Fund and Indigenous Housing Fund, with a goal of building and protecting 26,000 housing units a year.", "greensPdf"],
       ndp: [1, "Would direct additional tax revenue toward building affordable housing.", "bcPlat"],
       centre: [1, "Would double BC Builds to 20,000 homes by 2031 and build 1,000 supportive homes.", "bcCentre"]
     } },
   { id: "healthrecruit", topic: "Health care",
     text: "BC should actively recruit doctors and nurses from the United States and lure Canadian health workers home.",
     stances: {
-      ndp: [2, "Pledges to triple U.S. health care recruitment.", "day1"]
+      ndp: [2, "Would expand targeted U.S. health-care recruitment and offer incentives for Canadian professionals to return.", "day1"]
     } },
   { id: "privatehealth", topic: "Health care",
     text: "Private health care operations should be allowed alongside the public system.",
     stances: {
       onebc: [2, "Proposes private health care alongside fully funded public health care.", "bcOne"],
-      green: [-2, "Pledges to \"keep every public health dollar in public care\".", "bcPlat"],
+      green: [-2, "Would push back on the creeping privatization of health care, keep public dollars focused on care and phase out reliance on private agency nurses and for-profit staffing agencies.", "greensPdf"],
       con: [-1, "Pledges to protect health funding while keeping the system public.", "bcCon"],
       centre: [-2, "Would phase out private nursing agencies and stop private-pay routes to faster public primary care.", "bcCentre"],
       ndp: [-1, "Frames its health plan around a public system that \"puts patients first\".", "day1", true]
@@ -170,7 +168,7 @@ const QUESTIONS = [
     stances: {
       onebc: [2, "Would eliminate safe supply and consumption programs, convert existing sites to recovery centres and roll back decriminalization.", "bcOne"],
       con: [2, "Would end \"safe supply\", stop illegal drug use in hospitals, shelters and supportive housing, and end open drug use.", "bcCon"],
-      green: [-2, "Would fight the toxic drug crisis through harm reduction, supervised sites, pharmaceutical alternatives and decriminalization.", "bcPlat"]
+      green: [-2, "Would decriminalize possession for personal use, provide regulated pharmaceutical alternatives to the illicit supply and expand supervised consumption and overdose prevention sites.", "greensPdf"]
     } },
   { id: "extortion", topic: "Public safety",
     text: "BC should create dedicated tools against extortion of businesses, such as a specialized prosecution docket and a joint RCMP, CBSA and FINTRAC cell.",
@@ -180,14 +178,14 @@ const QUESTIONS = [
   { id: "wealthtax", topic: "Taxes & budget",
     text: "BC should introduce a wealth tax on net assets above $50 million, with a one-time levy followed by an annual tax.",
     stances: {
-      green: [2, "The Fair Share Act would impose a one-time tax of 5% on net assets above $50M, 10% above $100M and 20% above $1B, followed by an annual tax of 2%, 3% and 5% on the same tiers beginning in the second year, to fund childcare, transit and housing.", "yahooTax"],
+      green: [2, "The Fair Share Act would impose a one-time tax of 5% on net assets above $50M, 10% above $100M and 20% above $1B, followed by an annual tax of 2%, 3% and 5% on the same tiers beginning in the second year, estimated at about $22.2 billion for the one-time levy and $5.4 billion a year for the annual tax.", "greensPdf"],
       con: [-2, "Rules out any new taxes.", "cpTax", true],
       onebc: [-2, "Promises 25% tax cuts rather than new taxes.", "bcOne", true]
     } },
   { id: "freetransit", topic: "Transportation",
     text: "Public transit should be free across BC.",
     stances: {
-      green: [2, "Would use wealth tax revenue to fund free public transit.", "yahooTax"]
+      green: [1, "Would phase in free transit starting with riders under 25 and seniors 65+, and make it free for all once infrastructure improvements are made and funding stabilizes; not free for everyone at launch.", "greensPdf"]
     } },
   { id: "grocery", topic: "Cost of living",
     text: "The province should cap retail margins on essential groceries and require per-unit shelf pricing.",
@@ -198,7 +196,7 @@ const QUESTIONS = [
     text: "BC should expand seniors' care, including home care and long-term care staffing and beds.",
     stances: {
       ndp: [2, "Would add 500 health care workers for seniors and resume seven paused long-term care projects.", "yahooTax"],
-      green: [2, "Commits to long-term and dementia care and community health centres.", "bcPlat"],
+      green: [2, "Would develop a plan to increase publicly funded long-term care beds, improve respite care and at-home care services and set up a dementia care pathway.", "greensPdf"],
       con: [2, "Would build long-term care beds faster, expand publicly funded home care and publish long-term care waitlists monthly.", "bcCon"],
       centre: [2, "Would expand home care so seniors can age with dignity.", "bcCentre"]
     } },
@@ -208,7 +206,7 @@ const QUESTIONS = [
       onebc: [2, "Would provide involuntary drug rehabilitation and housing for severely addicted people.", "bcOne"],
       con: [2, "Would amend the Mental Health Act to allow mandatory treatment and empower police to enforce it.", "bcCon"],
       ndp: [1, "Promised involuntary care at an immediately available site in the Kelowna region.", "bcNdpCon"],
-      green: [-2, "Would fight the toxic drug crisis through harm reduction and voluntary care.", "bcPlat"]
+      
     } },
   { id: "incometax", topic: "Taxes & budget",
     text: "Provincial income taxes should be cut for most workers.",
@@ -226,7 +224,8 @@ const QUESTIONS = [
     text: "BC should replace ICBC's no-fault system with a hybrid model that restores the right to sue for full compensation.",
     stances: {
       con: [2, "Would replace the no-fault system with a hybrid model, keeping ICBC as a public option.", "bcCon"],
-      ndp: [-2, "Introduced no-fault insurance and now promises to freeze car insurance rates for three years.", "debate", true]
+      ndp: [-2, "Introduced no-fault insurance and now promises to freeze car insurance rates for three years.", "debate", true],
+      green: [-2, "Would keep the no-fault model and amend legislation so all reasonable accident costs are covered.", "greensPdf"]
     } },
   { id: "permitdeadlines", topic: "Housing",
     text: "The province should set firm deadlines for municipal rezonings and building permits.",
@@ -236,7 +235,7 @@ const QUESTIONS = [
   { id: "votingreform", topic: "Democracy",
     text: "BC should adopt proportional representation or other voting system reform.",
     stances: {
-      green: [2, "Would make voting system reform a condition of support in a minority government.", "debate"]
+      green: [2, "Would introduce legislation within its first 100 days to implement proportional representation for the 2030 election, and create a biennial citizens' assembly.", "greensPdf"]
     } },
   { id: "sogi", topic: "Schools",
     text: "SOGI 123 teaching resources should be removed from BC schools.",
@@ -244,6 +243,7 @@ const QUESTIONS = [
       con: [2, "Platform pledges to repeal SOGI, and Doerkson said the resource \"has to be removed\".", "bcCon"],
       onebc: [2, "Would remove SOGI-123 and politicized content from classrooms and bring in a Parental Bill of Rights.", "bcOne"],
       ndp: [-1, "Reaffirms anti-bullying work in schools while ending an ARC Foundation grant.", "day4"],
+      green: [-2, "Would continue supporting and expanding the SOGI 123 initiative to create inclusive school environments.", "greensPdf"],
       centre: [-1, "Promises not to repeal legislation protecting the right to be free from discrimination.", "bcCentre", true]
     } },
   { id: "minorscare", topic: "Schools",
@@ -255,7 +255,7 @@ const QUESTIONS = [
     text: "BC should stay committed to the Declaration on the Rights of Indigenous Peoples Act (DRIPA) and ongoing reconciliation.",
     stances: {
       ndp: [2, "Says its commitment to DRIPA negotiations \"is not up for debate\", though it earlier proposed amendments and delayed changes after First Nations opposition.", "day4"],
-      green: [2, "Would fund public education on DRIPA and teach Indigenous history to MLAs and staff.", "bcPlat"],
+      green: [2, "Would fund public education on DRIPA, teach Indigenous history to MLAs and public servants, create an expert DRIPA advisory committee and call on Eby to apologize to the Cowichan and Gitxaała for mishandling DRIPA.", "greensPdf"],
       centre: [-2, "Would repeal DRIPA and section 8.1 of the Interpretation Act in its first session with a single bill, replacing them with a treaty-based law.", "bcCentre"],
       con: [-2, "Pledged in the leaders' debate to repeal DRIPA, arguing it has created division.", "debate"],
       onebc: [-2, "Would repeal DRIPA and declare UNDRIP to have no force and effect in BC.", "bcOne"]
@@ -268,7 +268,7 @@ const QUESTIONS = [
   { id: "transit", topic: "Transportation",
     text: "BC should invest more in regional transit, passenger rail and ferry service.",
     stances: {
-      green: [2, "Candidates emphasize regional transit, passenger rail and underfunded ferry routes.", "greensPlan"]
+      green: [2, "Would double the number of buses within a first term, develop a large-scale passenger rail strategy, seek federal ferry funding parity with Atlantic Canada and re-establish 13 Ferry Advisory Committees.", "greensPdf"]
     } },
   { id: "teacherstrikes", topic: "Labour",
     text: "Teacher strikes should be banned.",

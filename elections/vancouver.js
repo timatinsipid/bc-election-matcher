@@ -159,8 +159,7 @@ const QUESTIONS = [
   { id: "involuntary", topic: "Public safety",
     text: "Vancouver should push for involuntary care beds for people with severe addiction and mental illness.",
     stances: {
-      abc: [2, "Backs a plebiscite question on a secure treatment facility with at least 100 involuntary care beds, including part of the old St. Paul's Hospital.", "dhPitch"],
-      liberals: [-2, "Kareem Allam says of the St. Paul's plan \"It is prison, let me be clear\" and that \"Vancouver needs treatment, not a prison on Burrard Street\". Inferred opposition to involuntary care beds at that site.", "safety", true]
+      abc: [2, "Backs a plebiscite question on a secure treatment facility with at least 100 involuntary care beds, including part of the old St. Paul's Hospital.", "dhPitch"]
     } },
   { id: "bikes", topic: "Transportation",
     text: "The City should convert more road space to bike lanes, pedestrian areas and green space, including lower speed limits on residential streets.",

@@ -54,10 +54,7 @@
       text: "Richmond should increase police visibility, with more foot patrols and early intervention at problem spots.",
       stances: {
         loo: [2, "Proposes more police foot patrols and early intervention at problem spots and homeless camps.", "yahoo"],
-        kang: [2, "Her \"safety first\" platform calls for more police visibility.", "yahoo"],
-        heed: [2, "Runs on law and order.", "yahoo"],
-        howard: [1, "Backs safer streets.", "yahoo"],
-        cheung: [1, "Defends safe streets.", "yahoo"]
+        kang: [2, "Her \"safety first\" platform calls for more police visibility.", "yahoo"]
       } },
     { id: "druguse", topic: "Public safety",
       text: "Richmond should impose the strongest possible restrictions on public drug use and oppose supervised consumption sites.",
@@ -74,8 +71,7 @@
       stances: {
         howard: [2, "Backs an independent audit of spending.", "yahoo"],
         heed: [2, "Proposes a budget accountability office.", "yahoo"],
-        kang: [1, "Wants a spending review.", "yahoo"],
-        loo: [1, "Would tie property tax increases to demonstrable costs.", "yahoo", true]
+        kang: [1, "Wants a spending review.", "yahoo"]
       } }
   ];
 
