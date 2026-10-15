@@ -3,25 +3,35 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>BC 2026 Provincial Election Matcher</title>
-  <meta name="description" content="Answer questions about provincial issues and see which BC party's platform most closely matches your views.">
+  <title>Lower Mainland &amp; BC Election Matcher</title>
+  <meta name="description" content="Pick a BC provincial or Lower Mainland municipal election, answer questions on the issues, and see which party's published platform most closely matches your views.">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="site-header">
     <div class="wrap">
-      <h1>BC Provincial Election Matcher</h1>
-      <p class="sub">Election day: October 24, 2026 (advance voting October 16–21)</p>
+      <h1>Lower Mainland &amp; BC Election Matcher</h1>
+      <div class="picker">
+        <label for="election-select">Choose an election</label>
+        <select id="election-select"></select>
+      </div>
     </div>
   </header>
 
   <main class="wrap" id="app" aria-live="polite"></main>
 
   <footer class="wrap site-footer">
-    <p>Non-partisan and unofficial. Positions are summarized from public reporting and party releases as of September 30, 2026, and may be incomplete or out of date. Always check each party's own platform before you vote. Your answers stay in your browser and are never sent anywhere.</p>
+    <p>Non-partisan and unofficial. Positions are summarized from public reporting and party releases, and may be incomplete or out of date; each election page shows when its data was last updated. Always check each party's own platform before you vote. Your answers stay in your browser and are never sent anywhere.</p>
   </footer>
 
-  <script src="data.js"></script>
+  <script src="registry.js"></script>
+  <script src="elections/bc-provincial.js"></script>
+  <script src="elections/vancouver.js"></script>
+  <script src="elections/surrey.js"></script>
+  <script src="elections/burnaby.js"></script>
+  <script src="elections/richmond.js"></script>
+  <script src="elections/delta.js"></script>
+  <script src="elections/directory.js"></script>
   <script src="score.js"></script>
   <script src="app.js"></script>
 </body>
