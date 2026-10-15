@@ -16,8 +16,7 @@
     { id: "nonewtaxes", topic: "Taxes",
       text: "Delta should commit to no new taxes, levies or fees.",
       stances: {
-        onedelta: [2, "Pledges no new taxes, levies or fees, without explaining how rising costs would be covered.", "ubyssey"],
-        a4d: [1, "Campaigns on low residential taxes and says Delta's finances are in the best shape ever.", "ubyssey"]
+        onedelta: [2, "Pledges no new taxes, levies or fees, without explaining how rising costs would be covered.", "ubyssey"]
       } },
     { id: "taxbase", topic: "Economy",
       text: "Delta should expand its industrial and commercial tax base and create a dedicated economic development office.",

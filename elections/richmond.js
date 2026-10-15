@@ -40,10 +40,14 @@
         loo: [-2, "Voted against the Aster Place extension.", "yahoo"]
       } },
     { id: "permits", topic: "Housing",
-      text: "Richmond should speed up housing permits and cut developer fees.",
+      text: "Richmond should speed up housing permits.",
       stances: {
         howard: [2, "Backs faster housing permitting.", "yahoo"],
-        loo: [2, "Proposes streamlining permitting.", "yahoo"],
+        loo: [2, "Proposes streamlining permitting.", "yahoo"]
+      } },
+    { id: "devfees", topic: "Housing",
+      text: "Richmond should lower developer fees.",
+      stances: {
         kang: [2, "Wants lower developer fees.", "yahoo"]
       } },
     { id: "policing", topic: "Public safety",
@@ -58,14 +62,12 @@
     { id: "druguse", topic: "Public safety",
       text: "Richmond should impose the strongest possible restrictions on public drug use and oppose supervised consumption sites.",
       stances: {
-        cheung: [2, "Promises \"the strongest possible restrictions\" on public drug use and joined protests against a supervised consumption site in 2024.", "yahoo"],
-        heed: [1, "Wants more support for people with complex addiction and mental-health needs, including secure care.", "yahoo", true]
+        cheung: [2, "Promises \"the strongest possible restrictions\" on public drug use and joined protests against a supervised consumption site in 2024.", "yahoo"]
       } },
     { id: "securecare", topic: "Public safety",
       text: "Richmond should push for secure care for people with complex addiction and mental-health needs.",
       stances: {
-        heed: [2, "Wants more support for people with complex addiction and mental-health needs, including secure care.", "yahoo"],
-        kang: [1, "Wants a spending review to fund front-line mental-health and addiction services.", "yahoo", true]
+        heed: [2, "Wants more support for people with complex addiction and mental-health needs, including secure care.", "yahoo"]
       } },
     { id: "audit", topic: "Governance",
       text: "Richmond should create an independent audit or accountability office for city spending.",

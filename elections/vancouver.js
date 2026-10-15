@@ -99,7 +99,6 @@ const QUESTIONS = [
     stances: {
       cope: [2, "Would restore the Renters Office, adopt a binding tenants' rights by-law and expand tenant relocation protections.", "cope"],
       greens: [2, "Proposes a Renters' Office and stronger relocation assistance for tenants affected by redevelopment.", "greens"],
-      team: [1, "Prioritizes low-income, supportive and secure rental housing.", "promises"],
       onecity: [2, "Wants renter protections extended citywide.", "cityOne"]
     } },
   { id: "speculation", topic: "Housing",
@@ -143,7 +142,7 @@ const QUESTIONS = [
     stances: {
       liberals: [2, "Would increase VPD funding and target organized crime and money laundering.", "dhPitch"],
       team: [1, "Wants a safety plan targeting repeat offenders and more street-disorder enforcement.", "promises"],
-      abc: [1, "Public safety is the centrepiece of its platform, including simpler drug seizures for police and a promise to hire 100 more officers.", "pike"]
+      abc: [1, "Public safety is the centrepiece of its platform, including simpler drug seizures for police. (Its pledge to hire 100 more officers dates from the 2022 campaign and is not counted as a 2026 promise.)", "pike"]
     } },
   { id: "crow", topic: "Public safety",
     text: "Non-emergency situations involving homelessness, addiction or mental health should be handled by trained non-police, non-medical outreach workers.",
@@ -161,8 +160,7 @@ const QUESTIONS = [
     text: "Vancouver should push for involuntary care beds for people with severe addiction and mental illness.",
     stances: {
       abc: [2, "Backs a plebiscite question on a secure treatment facility with at least 100 involuntary care beds, including part of the old St. Paul's Hospital.", "dhPitch"],
-      liberals: [-2, "Kareem Allam says the St. Paul's plan is \"essentially building a prison\" downtown.", "safety"],
-      vote: [1, "Would lobby the Province for more psychiatric beds and target repeat offenders.", "safety", true]
+      liberals: [-2, "Kareem Allam says of the St. Paul's plan \"It is prison, let me be clear\" and that \"Vancouver needs treatment, not a prison on Burrard Street\". Inferred opposition to involuntary care beds at that site.", "safety", true]
     } },
   { id: "bikes", topic: "Transportation",
     text: "The City should convert more road space to bike lanes, pedestrian areas and green space, including lower speed limits on residential streets.",
@@ -198,9 +196,7 @@ const QUESTIONS = [
   { id: "climate", topic: "Environment",
     text: "The City should strengthen climate rules, such as requiring zero-emission heating in new buildings and enforcing greenhouse-gas limits on large buildings.",
     stances: {
-      onecity: [2, "Would restore zero-emission heating rules and GHG limit enforcement, and launch a public rooftop solar program.", "oneClimate"],
-      cope: [1, "Wants infrastructure upgrades for climate events and community preparedness.", "cope"],
-      greens: [1, "Proposes green roofs on larger buildings and stronger tree protection.", "greens"]
+      onecity: [2, "Would restore zero-emission heating rules and GHG limit enforcement, and launch a public rooftop solar program.", "oneClimate"]
     } },
   { id: "trees", topic: "Environment",
     text: "The City should protect and expand the urban tree canopy and green space, with stronger tree bylaws and a municipal arborist.",
@@ -213,7 +209,7 @@ const QUESTIONS = [
     stances: {
       cope: [2, "Would fully fund libraries to open 7 days a week and strengthen the Park Board.", "cope"],
       greens: [2, "Would restore $6 million to the Park Board and renew community centres.", "greens"],
-      abc: [2, "Promises $400 million for community centres, new aquatic centres in Sunset and Marpole and a 50-metre pool.", "abcPlat"],
+      abc: [2, "Promises new aquatic centres in Sunset and Marpole and a 50-metre pool, and says $400 million for community centres is already approved in the 2027-2030 capital plan (an ABC claim not independently confirmed).", "abcPlat"],
       team: [1, "Wants to invest in core services.", "promises"]
     } },
   { id: "schoolmeals", topic: "Services & culture",
@@ -242,7 +238,7 @@ ELECTIONS.push({
   date: "2026-10-17", dateLabel: "October 17, 2026", advance: "Advance voting Oct 3, 7, 10 and 13",
   updated: "2026-10-15",
   intro: "Agree or disagree with short statements about city issues. At the end you'll see how closely each party's published platform lines up with your views, with the reasons and sources.",
-  caveat: "Independent candidates are not included. COPE and OneCity have no mayoral candidate and had not released full 2026 platforms. The Vancouver ballot also has two public-safety plebiscite questions and three capital plan questions.",
+  caveat: "Independent candidates are not included. COPE and OneCity have no mayoral candidate, so their results reflect their council, Park Board and school board platforms, not a choice for mayor. Both have published 2026 commitments (COPE released its full platform on September 28), but they do not cover every quiz question; where a stance is missing it is left out of the score, not counted as disagreement. The Vancouver ballot also has two public-safety plebiscite questions and three capital plan questions.",
   sources: SOURCES, parties: PARTIES, unscored: [], questions: QUESTIONS
 });
 })();

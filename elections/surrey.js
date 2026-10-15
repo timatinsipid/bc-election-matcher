@@ -32,7 +32,7 @@
       stances: {
         first: [2, "Promises to complete the policing transition.", "runner"],
         connect: [1, "Criticized the transition but agreed in 2024 to continue with the Surrey Police Service.", "runner"],
-        ssc: [1, "Would give the Surrey Police Service a helicopter and drone within 90 days.", "runner", true]
+        ssc: [2, "Promises to complete the Surrey Police Service transition and give it a helicopter and drone fleet within 90 days.", "runner"]
       } },
     { id: "policingfund", topic: "Public safety",
       text: "Surrey should fully fund policing and add more public safety staff.",
@@ -113,7 +113,7 @@
 
   const UNSCORED = [
     { name: "New Surrey+ (Igal Ammons II)", leader: "",
-      note: "Proposes a single-fare transit network from West Vancouver to Abbotsford Airport, a clinic in each of six neighbourhoods and evenly split investment across six town centres. Its platform comes almost entirely from the party's own description, so it is not scored.", source: "runner" }
+      note: "Proposes a single-fare transit network from West Vancouver to Abbotsford Airport, a clinic in each of six neighbourhoods and evenly split investment across six town centres. Its platform covers only one or two of the issues in this quiz (transit and health clinics), so there is too little to compare and it is not scored.", source: "runner" }
   ];
 
   ELECTIONS.push({
@@ -121,7 +121,7 @@
     date: "2026-10-17", dateLabel: "October 17, 2026", advance: "Advance voting dates: see the City of Surrey",
     updated: "2026-10-15",
     intro: "Agree or disagree with short statements about Surrey issues. At the end you'll see which slate's published platform lines up best with your views, with reasons and sources.",
-    caveat: "Surrey has seven mayoral slates; six are scored and New Surrey+ is not, because its platform comes from the party's own description. Independents are not included. Several platforms (Conservative, Surrey Now) are thin, and most are summarized from one press breakdown, so verify before you vote.",
+    caveat: "Surrey has seven mayoral slates; six are scored and New Surrey+ is not, because its platform overlaps with too few of the quiz questions. Independents are not included. Several platforms (Conservative, Surrey Now) are thin, and most are summarized from one press breakdown, so verify before you vote.",
     sources: SOURCES, parties: PARTIES, unscored: UNSCORED, questions: QUESTIONS
   });
 })();

@@ -39,11 +39,11 @@ const SOURCES = {
 
 const PARTIES = [
   { id: "ndp", name: "BC NDP", leader: "David Eby (Premier)", color: "#e8590c",
-    blurb: "Governing party running on \"Build BC Strong\": resource and critical-minerals development, a 10-cent fuel tax cut with a gas \"price guard\", grocery margin caps, a new tax bracket on income above $1 million and higher speculation taxes." },
+    blurb: "Governing party running on its \"BC Strong\" fiscal and costing plan: resource and critical-minerals development, a 10-cent fuel tax cut with a gas \"price guard\", grocery margin caps, a new tax bracket on income above $1 million and higher speculation taxes." },
   { id: "con", name: "Conservative Party of BC", leader: "Lorne Doerkson (interim leader)", color: "#1c7ed6",
     blurb: "Official Opposition running on \"no new taxes\", a 120-day permitting act, doubling LNG production by 2032 and tripling it by 2035, and repealing SOGI and DRIPA. Leadership is interim after Kerry-Lynne Findlay resigned on September 20." },
   { id: "green", name: "BC Greens", leader: "Emily Lowan", color: "#2f9e44",
-    blurb: "Running on \"Believe in Better\": vacancy control and renter protections, universal free childcare by 2031, a wealth tax on fortunes above $50 million, free transit and ending new fossil fuel development." },
+    blurb: "Running on \"Believe in Better\": vacancy control and renter protections, universal free childcare by 2031, a one-time and annual wealth tax on fortunes above $50 million, free transit and ending new fossil fuel development." },
   { id: "onebc", name: "OneBC", leader: "Dallas Brodie (interim leader)", color: "#6741d9",
     blurb: "Right-wing populist, socially conservative party formed by former Conservative MLAs: 25% tax cuts across all brackets, private health care alongside public, rolling back decriminalization and repealing DRIPA." },
   { id: "centre", name: "CentreBC", leader: "Elenore Sturko", color: "#0ca678",
@@ -58,13 +58,13 @@ const QUESTIONS = [
     text: "BC should expand liquefied natural gas (LNG) production, including the LNG Canada expansion.",
     stances: {
       con: [2, "Would double LNG production by 2032 and triple it by 2035 with very fast project approvals.", "cpLng"],
-      ndp: [2, "Supports LNG Canada phase two as one of the largest private-sector investments in Canadian history and approved Tilbury LNG Phase 2.", "buzz"],
+      ndp: [2, "Supports LNG Canada phase two as one of the largest private-sector investments in Canadian history.", "buzz"],
       green: [-2, "Would redirect LNG subsidies to renewable energy and opposes the LNG Canada phase-two expansion, backing Indigenous nations that oppose it.", "day9"]
     } },
   { id: "pipeline", topic: "Energy & climate",
     text: "BC should support a new oil pipeline to the northwest coast (Prince Rupert or Kitimat).",
     stances: {
-      con: [2, "Doerkson praised the federal designation of the Pacific Link pipeline as a national priority and wants a trilateral working group with Alberta and Ottawa.", "fuel"],
+      con: [2, "Doerkson praised the federal designation of the Pacific Link pipeline as a national priority and wants a trilateral working group with Alberta and Ottawa (cited article does not contain this; source to be re-checked).", "fuel", true],
       onebc: [2, "Would approve a pipeline to Prince Rupert or Kitimat.", "bcOne"],
       green: [-2, "Would stop new fossil fuel development.", "bcPlat"]
     } },
@@ -107,12 +107,12 @@ const QUESTIONS = [
   { id: "fuel", topic: "Taxes & budget",
     text: "BC should temporarily cut the provincial fuel tax and cap gas station margins through a \"price guard\".",
     stances: {
-      ndp: [2, "Pledges a temporary 10-cent-per-litre fuel tax cut and a permanent BC Utilities Commission price guard, at an estimated $250 million.", "fuel"]
+      ndp: [2, "Pledges a temporary 10-cent-per-litre fuel tax cut and a permanent BC Utilities Commission price guard.", "fuel"]
     } },
   { id: "wealthytax", topic: "Taxes & budget",
     text: "Large corporations and the wealthiest British Columbians should pay significantly more in tax.",
     stances: {
-      green: [2, "Proposes a wealth tax on net assets over $50 million (the Fair Share Act) plus a windfall tax on mega-corporations.", "yahooTax"],
+      green: [2, "Proposes a one-time and an annual wealth tax on net assets over $50 million (the Fair Share Act) plus a windfall tax on mega-corporations.", "yahooTax"],
       ndp: [2, "Would add a 24.5% bracket on income above $1 million from 2027 and raise the top two brackets by 2 points, raising about $1 billion a year for health care and cost relief.", "yahooTax"],
       con: [-2, "Rules out any new taxes and calls the NDP's millionaire bracket a \"doctor's tax\".", "yahooTax"],
       onebc: [-1, "Favours big tax cuts rather than new taxes.", "bcOne", true]
@@ -120,7 +120,6 @@ const QUESTIONS = [
   { id: "deficit", topic: "Taxes & budget",
     text: "The deficit should be reduced mainly by growing the economy and cutting wasteful spending, not by raising revenue.",
     stances: {
-      ndp: [2, "Pledges to bring the deficit down year over year by growing the economy and cutting wasteful spending.", "wk2"],
       con: [2, "Says economic growth will reduce the $13.8-billion deficit, though it gave no timeline for a balanced budget.", "wk2"],
       onebc: [1, "Promises balanced budgets within four years and shifting administrative spending toward frontline staff.", "bcOne"],
       green: [-1, "Would raise revenue from corporations and the ultra-wealthy to pay for services.", "bcPlat", true]
@@ -141,7 +140,7 @@ const QUESTIONS = [
   { id: "emptyhomes", topic: "Housing",
     text: "The province should raise speculation and vacancy taxes and add a tax on unsold new condos.",
     stances: {
-      ndp: [2, "Would raise the speculation tax from 1% to 2% (domestic) and 4% to 5% (foreign) and add an unsold-condo tax starting at 2% and rising 1% a year.", "bcPlat"],
+      ndp: [2, "Would raise the speculation and vacancy tax and add a new tax on unsold new condos (reported as starting at 2% and rising 1% a year); the exact new speculation tax rates were not confirmed.", "bcPlat"],
       con: [-1, "Would keep the foreign buyers tax and the speculation and vacancy tax, but rules out any new taxes.", "bcCon"],
       onebc: [-1, "Favours broad tax cuts rather than new taxes.", "bcOne", true]
     } },
@@ -155,7 +154,7 @@ const QUESTIONS = [
   { id: "healthrecruit", topic: "Health care",
     text: "BC should actively recruit doctors and nurses from the United States and lure Canadian health workers home.",
     stances: {
-      ndp: [2, "Pledges to triple U.S. health care recruitment, with loan forgiveness and relocation support through Health Match BC.", "day1"]
+      ndp: [2, "Pledges to triple U.S. health care recruitment.", "day1"]
     } },
   { id: "privatehealth", topic: "Health care",
     text: "Private health care operations should be allowed alongside the public system.",
@@ -179,9 +178,9 @@ const QUESTIONS = [
       centre: [2, "Proposes a three-step extortion plan, a FINTRAC–RCMP–CBSA cell in Surrey, security micro-grants and a dedicated extortion docket.", "bcCentre"]
     } },
   { id: "wealthtax", topic: "Taxes & budget",
-    text: "BC should introduce an annual wealth tax on net assets above $50 million.",
+    text: "BC should introduce a wealth tax on net assets above $50 million, with a one-time levy followed by an annual tax.",
     stances: {
-      green: [2, "The Fair Share Act would impose annual wealth taxes of 2% above $50M, 3% above $100M and 5% above $1B, to fund childcare, transit and housing.", "yahooTax"],
+      green: [2, "The Fair Share Act would impose a one-time tax of 5% on net assets above $50M, 10% above $100M and 20% above $1B, followed by an annual tax of 2%, 3% and 5% on the same tiers beginning in the second year, to fund childcare, transit and housing.", "yahooTax"],
       con: [-2, "Rules out any new taxes.", "cpTax", true],
       onebc: [-2, "Promises 25% tax cuts rather than new taxes.", "bcOne", true]
     } },
@@ -221,7 +220,6 @@ const QUESTIONS = [
     text: "BC should hire significantly more police officers and Crown prosecutors.",
     stances: {
       con: [2, "Would hire 250 more police, add 500 RCMP officers in rural areas, hire 50 Crown prosecutors and work with Ottawa on 20 more judges.", "bcCon"],
-      onebc: [1, "Would crack down on repeat and violent offenders.", "bcOne", true],
       centre: [1, "Would create a dedicated extortion prosecution docket and Crown team.", "bcCentre", true]
     } },
   { id: "icbc", topic: "Cost of living",
@@ -234,7 +232,6 @@ const QUESTIONS = [
     text: "The province should set firm deadlines for municipal rezonings and building permits.",
     stances: {
       centre: [2, "Would set provincial standards of six months for rezonings and eight weeks for building permits by 2028, with refunds if deadlines are missed.", "bcCentre"],
-      con: [-1, "Says Victoria should not dictate what municipalities build, where or how.", "bcPlat", true]
     } },
   { id: "votingreform", topic: "Democracy",
     text: "BC should adopt proportional representation or other voting system reform.",
@@ -259,7 +256,7 @@ const QUESTIONS = [
     stances: {
       ndp: [2, "Says its commitment to DRIPA negotiations \"is not up for debate\", though it earlier proposed amendments and delayed changes after First Nations opposition.", "day4"],
       green: [2, "Would fund public education on DRIPA and teach Indigenous history to MLAs and staff.", "bcPlat"],
-      centre: [1, "Would create a single provincial framework coordinating treaty and reconciliation mandates, funding and timelines.", "bcCentre"],
+      centre: [-2, "Would repeal DRIPA and section 8.1 of the Interpretation Act in its first session with a single bill, replacing them with a treaty-based law.", "bcCentre"],
       con: [-2, "Pledged in the leaders' debate to repeal DRIPA, arguing it has created division.", "debate"],
       onebc: [-2, "Would repeal DRIPA and declare UNDRIP to have no force and effect in BC.", "bcOne"]
     } },

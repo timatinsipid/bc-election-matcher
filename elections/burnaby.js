@@ -26,8 +26,8 @@
       note: "A new slate. No published platform was found, so it is not scored.", source: "freshet" },
     { name: "Burnaby Green Party", leader: "4 council candidates",
       note: "No published 2026 platform was found, so it is not scored.", source: "freshet" },
-    { name: "Sabina Hsu and \"Michael Angelo ABCRobinhood\" (independent mayoral candidates)", leader: "",
-      note: "Hsu lists proposals for a property tax committee, surveillance cameras and a \"zero tolerance\" approach to crime; Robinhood lists seniors' housing and opposition to safe injection sites. Both platforms are very thin, so neither is scored.", source: "ubyssey" }
+    { name: "Sabina Hsu and Yusuf Kaplan (independent mayoral candidates)", leader: "",
+      note: "Hsu lists proposals for a property tax committee, surveillance cameras and a \"zero tolerance\" approach to crime; Kaplan (who appears on the ballot as \"Michael Angelo ABCRobinhood\") lists seniors' housing, Burnaby Hospital, schools, a two-term limit for councillors and opposition to safe injection sites, which the Ubyssey notes largely fall outside municipal control. Both platforms are very thin, so neither is scored.", source: "ubyssey" }
   ];
 
   const QUESTIONS = [
@@ -50,9 +50,7 @@
     { id: "housingauthority", topic: "Housing",
       text: "The City should build affordable rental homes directly through its own housing authority.",
       stances: {
-        hurley: [2, "Created the Burnaby Housing Authority, with about 380 homes underway toward 1,000 in three years.", "ubyssey"],
-        first: [1, "Favours low-rise rentals, co-op and non-profit homes.", "multiliving", true],
-        petrovas: [1, "Backs a mix of rentals, townhomes and a rent-to-own program.", "multiliving", true]
+        hurley: [2, "Created the Burnaby Housing Authority, with about 380 homes underway toward 1,000 in three years.", "ubyssey"]
       } },
     { id: "dcc", topic: "Housing",
       text: "The City should phase out development cost charges and per-home fees on new housing.",
@@ -72,8 +70,7 @@
       stances: {
         hurley: [2, "Argues transit and schools must come before growth and wants other governments to fund infrastructure.", "ubyssey"],
         petrovas: [2, "Wants roads built before new development.", "ubyssey"],
-        first: [1, "Wants development that fits existing neighbourhoods, with density along transit corridors.", "ubyssey"],
-        wang: [-1, "Wants more medium-density and mixed-use housing.", "ubyssey", true]
+        first: [1, "Wants development that fits existing neighbourhoods, with density along transit corridors.", "ubyssey"]
       } },
     { id: "transit", topic: "Transportation",
       text: "Improving transit should be the City's top transportation priority.",
